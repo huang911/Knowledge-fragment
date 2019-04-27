@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>冒泡排序</title>
+</head>
+<body>
+<script type="text/javascript">
+   function bubbleSort(arr){
+  // var i = j = 0;
+  for(var i = 0; i<arr.length-1; i++){
+    for(var j = 0; j<arr.length-i; j++){
+      var temp = 0;
+      // ">" 从小到大排序
+      // "<" 从大到小排序
+      if(arr[j] > arr[j+1]){
+        temp = arr[j]
+        arr[j] = arr[j+1]
+        arr[j+1] = temp
+      }
+    }
+  }
+  return arr
+}
+console.log(bubbleSort([0,1,4,3,2]));
+</script>
+</body>
+</html>
