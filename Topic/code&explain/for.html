@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	<!-- 使下面这个函数输出0-9 -->
+	/*function test() {
+		for (var i = 0; i< 10; i++){
+			setTimeout(() => {
+				console.log(i);
+		    }, 1000)
+		}
+	}
+
+	test();*/
+	
+	// 利用 let 变量的特性 — 在每一次 for 循环的过程中，let 声明的变量会在当前的块级作用域里面（for 循环的 body 体，也即两个花括号之间的内容区域）创建一个文法环境（Lexical Environment），该环境里面包括了当前 for 循环过程中的 i
+	/*function test1() {
+		for (let i = 0; i< 10; i++){
+			setTimeout(() => {
+				console.log(i);
+		    }, 1000)
+		}
+	}
+	test1();*/
+
+/*
+	function test2() {
+		setTimeout(() => {
+			for (var i = 0; i< 10; i++){
+				console.log(i);
+			}
+	    }, 1000)
+	}
+	test2();
+*/
+	// setTimeout(function[,delay, param1, param2]),delay: 可选，param:可选
+/*	function test3() {
+		for (var i = 0; i< 10; i++){
+			setTimeout((i) => {
+				console.log(i);
+		    }, 1000, i)
+		}
+	}
+	test3();
+*/
+	// 闭包
+	function test4() {
+		for (var i = 0; i< 10; i++){
+			((i) => {
+				setTimeout(() => {
+				console.log(i);
+		    }, 1000)
+			})(i);	
+		}
+	}
+	test4();
+
+
+</script>
+</body>
+</html>
