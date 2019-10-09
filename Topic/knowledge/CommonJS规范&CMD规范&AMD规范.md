@@ -76,3 +76,6 @@ import模块导入与export模块导出功能相对应，也存在两种模块�
 
 import的语法跟require不同，而且import必须放在文件的最开始，且前面不允许有其他逻辑代码，这和其他所有编程语言风格一致。
 
+注意：
+
+每个js文件一创建，都有一个var exports = module.exports = {},使exports和module.exports都指向一个空对象。 module.exports和exports所指向的内存地址相同

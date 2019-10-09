@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	<!-- Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+		An input string is valid if:
+
+		Open brackets must be closed by the same type of brackets.
+		Open brackets must be closed in the correct order.
+		Note that an empty string is also considered valid.
+	 -->
+
+	function fn(str) {
+		let arr = str.split('');
+		let a = [];
+		for (let item of arr) {
+			console.log(item);
+			if (item === '(' || item === '[' || item === '{') {
+				a.push(item);
+			} else if (item === ')' || item === ']' || item === '}') {
+				if (a.length === 0){
+					return false;
+				}
+				if((item === ')' && a.pop() !== '(') || (item === '}' && a.pop() !== '{') || (item === ']' && a.pop() !== '[')) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	console.log(fn( "([)]"));
+</script>
+</body>
+</html>
