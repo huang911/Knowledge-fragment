@@ -29,3 +29,42 @@
 ### 转换 wepy 文件不成功
 
 目前只能支持转换使用原生微信小程序开发的应用。
+
+#### componentDidMount()
+
+> 在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 app 的 `onLaunch`，在 `componentWillMount` 后执行
+
+监听程序初始化，初始化完成时触发（全局只触发一次）
+
+在此生命周期中也可以通过 `this.$router.params`，访问到程序初始化参数，与 `componentWillMount` 中一致
+
+#### componentDidShow()
+
+> 在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 `onShow`，在 H5/RN 中同步实现
+
+程序启动，或从后台进入前台显示时触发，微信小程序中也可以使用 `Taro.onAppShow` 绑定监听
+
+在此生命周期中通过 `this.$router.params`，可以访问到程序初始化参数
+
+#### componentDidHide()
+
+> 在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 `onHide`，在 H5/RN 中同步实现
+
+程序从前台进入后台时触发，微信小程序中也可以使用 `Taro.onAppHide` 绑定监听
+
+#### componentDidCatchError(String error)
+
+> 在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 `onError`，H5/RN 中尚未实现
+
+程序发生脚本错误或 API 调用报错时触发，微信小程序中也可以使用 `Taro.onError` 绑定监听
+
+#### componentDidNotFound(Object)
+
+> 在微信/字节跳动小程序中这一生命周期方法对应 `onPageNotFound`，其他端尚未实现
+> 微信小程序中，基础库 1.9.90 开始支持
+>
+> 
+
+### defaultProps
+
+`defaultProps` 可以被定义为组件类的一个属性，用以为类设置默认的属性。这对于未定义（undefined）的属性来说有用，而对于设为空（null）的属性并没用。例如：
