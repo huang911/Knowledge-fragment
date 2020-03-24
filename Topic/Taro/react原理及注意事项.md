@@ -70,19 +70,19 @@
 - [`static getDerivedStateFromError()`](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromerror)
 - [`componentDidCatch()`](https://zh-hans.reactjs.org/docs/react-component.html#componentdidcatch)
 
-### 5.其他 APIs
+#### 5.其他 APIs
 
-组件还提供了一些额外的 API：
+**组件还提供了一些额外的 API：**
 
 - [`setState()`](https://zh-hans.reactjs.org/docs/react-component.html#setstate)
 - [`forceUpdate()`](https://zh-hans.reactjs.org/docs/react-component.html#forceupdate)
 
-### 6.class 属性
+#### 6.class 属性
 
 - [`defaultProps`](https://zh-hans.reactjs.org/docs/react-component.html#defaultprops)
 - [`displayName`](https://zh-hans.reactjs.org/docs/react-component.html#displayname)
 
-### 7.实例属性
+#### 7.实例属性
 
 - [`props`](https://zh-hans.reactjs.org/docs/react-component.html#props)
 - [`state`](https://zh-hans.reactjs.org/docs/react-component.html#state)
@@ -175,7 +175,7 @@ componentDidUpdate(prevProps) {
 
 我们不建议在 `shouldComponentUpdate()` 中进行深层比较或使用 `JSON.stringify()`。这样非常影响效率，且会损害性能。
 
-##### 目前，如果 shouldComponentUpdate() 返回 false，则不会调用 UNSAFE_componentWillUpdate()，render() 和 componentDidUpdate()。后续版本，React 可能会将 shouldComponentUpdate 视为提示而不是严格的指令，并且，当返回 false 时，仍可能导致组件重新渲染。
+**目前，如果 shouldComponentUpdate() 返回 false，则不会调用 UNSAFE_componentWillUpdate()，render() 和 componentDidUpdate()。后续版本，React 可能会将 shouldComponentUpdate 视为提示而不是严格的指令，并且，当返回 false 时，仍可能导致组件重新渲染。**
 
 ##### 2.static getDerivedStateFromProps(props, state)
 

@@ -1,8 +1,8 @@
-### `this.setData`
+### `1.this.setData`
 
 转换后的 `this.setData` 的 API 相当于小程序的 `this.setData` 的 polyfill，他和 `this.setState` 最大的区别就在于，`this.setData` 之后 `data` 的数据是同步更新，而渲染是异步更新，而 `setState` 两者都是异步的。
 
-### `this.data` 和 `this.properties`
+### `2.this.data` 和 `this.properties`
 
 `this.data` 和 `this.properties` 相当于 Taro 的 `this.state` 和 `this.props` 的 alias，当它们的数据更新时，对应的 `state` 和 `props` 也会同步更新。
 
@@ -22,11 +22,11 @@
 |          detached |   componentWillUnmount |
 |             moved |                   保留 |
 
-### 不支持 `relations` 和 `Behavior`
+### 3.不支持 `relations` 和 `Behavior`
 
 目前转换暂只支持转换 `Page`、`Component` 、`App` 三种构造器创造的小程序组件实例。 `relations` 和 `Behavior` 在其他许多小程序端中还没有对应的实现，我们认为实现这两个功能意义不大。
 
-### 转换 wepy 文件不成功
+### 4.转换 wepy 文件不成功
 
 目前只能支持转换使用原生微信小程序开发的应用。
 
@@ -65,6 +65,6 @@
 >
 > 
 
-### defaultProps
+### 5.defaultProps
 
 `defaultProps` 可以被定义为组件类的一个属性，用以为类设置默认的属性。这对于未定义（undefined）的属性来说有用，而对于设为空（null）的属性并没用。例如：
