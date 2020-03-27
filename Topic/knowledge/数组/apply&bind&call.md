@@ -1,4 +1,4 @@
-**1.Function.prototype.apply()**
+### **1.Function.prototype.apply()**
 
 apply()方法调用一个具有给定this值的函数，以及作为一个数组(或类似数组对象)提供的参数。
 
@@ -20,7 +20,7 @@ apply()方法调用一个具有给定this值的函数，以及作为一个数组
 
 调用有指定this值和参数的函数的结果
 
-**2.Function.prototype.bind()**
+### **2.Function.prototype.bind()**
 
 bind()方法创建**一个新的函数**，在bind()被调用时，这个新函数的this被bind的第一个参数指定，其余的参数将作为新函数的参数供调用时使用。
 
@@ -36,7 +36,7 @@ arg1, arg2, ...
 
 当目标函数被调用时，预先添加到绑定函数的参数列表中的参数。
 
-**3.Function.prototype.call()**
+### **3.Function.prototype.call()**
 
 call()方法使用一个指定的this值和单独给出的一个或多个参数来调用一个函数，
 
@@ -59,10 +59,6 @@ arg1, arg2, ...
 **返回值：** 
 
 使用调用者提供的this值和参数调用该函数的返回值。若该方法没有返回值， 则返回undefined;
-
-
-
-
 
 
 

@@ -14,6 +14,8 @@
 
 被直接对象所包含的函数调用时，也称为方法调用，this隐式绑定到该直接对象。
 
+**this 永远指向最后调用它的那个对象**
+
 ### 3.隐式丢失
 
 指隐式绑定的函数丢失绑定对象，从而默认绑定到window.
@@ -27,6 +29,14 @@
 3.硬绑定：是显示绑定的一个变种，使this不能再被修改。
 
 API：javascript中新增了许多内置函数，具有显式绑定的功能，如数组的5个迭代方法：map()、forEach()、filter()、some()、every()
+
+- `this` 永远指向最后调用它的那个对象
+- 匿名函数的`this`永远指向`window`
+- 使用`.call()`或者`.apply()`的函数是会直接执行的
+- bind()`是创建一个新的函数，需要手动调用才会执行
+- 如果`call、apply、bind`接收到的第一个参数是空或者`null、undefined`的话，则会忽略这个参数`forEach、map、filter`函数的第二个参数也是能显式绑定`this`的
+
+
 
 ### 5.new 绑定
 
@@ -47,3 +57,5 @@ API：javascript中新增了许多内置函数，具有显式绑定的功能，�
 　this的四种绑定规则：默认绑定、隐式绑定、显式绑定和new绑定，分别对应函数的四种[调用方式](http://www.cnblogs.com/xiaohuochai/p/5702813.html#anchor3)：独立调用、方法调用、间接调用和构造函数调用。
 
 ***以上来自***：https://www.cnblogs.com/xiaohuochai/p/5735901.html
+
+关于this的理解：https://juejin.im/post/5e6358256fb9a07cd80f2e70
