@@ -14,41 +14,43 @@ a.Web应用是一个状态机，视图与状态是一一对应的；
 
 b.所有的状态，保存在一个对象里面；
 
-
-
+```js
 //createStore的简单实现
 const createStore = (reduces) => {
 	let state;
 	let listeners = [];
 
-- [ ] 	const getState = () => state;
+const getState = () => state;
   	
-  	const dispatch = (action) => {
-  		state = reducer(state, action);
-  		listeners.for((listen) => listen());
-  	};
-  	
-  	const subscribe = (listener) => {
-  		listeners.push(listener);
-  		return () => {
-  			listeners = listeners.filer(l => l !== listener);
-  		}
-  	};
-  	
-  	dispath({});
-  	
-  	return { getState, dispatch, subscribe};
+  const dispatch = (action) => {
+    		state = reducer(state, action);
+    		listeners.for((listen) => listen());
+    	};
+    	
+    	const subscribe = (listener) => {
+    		listeners.push(listener);
+    		return () => {
+    			listeners = listeners.filer(l => l !== listener);
+    		}
+    	};
+    	
+    	dispath({});
+    	
+    	return { getState, dispatch, subscribe};
 
 }
 
-- [ ] const combineReducers = reducers => {
-  	return (state = {}, action) => {
-  		return Object.keys(reducers).reduce(
-  			(nextState, key) => {
-  				nextState[key] = reducers[key](state[key], action);
-  				return nextState;
-  			}
-  		)
-  	}
+const combineReducers = reducers => {
+  return (state = {}, action) => {
+    		return Object.keys(reducers).reduce(
+    			(nextState, key) => {
+    				nextState[key] = reducers[key](state[key], action);
+    				return nextState;
+    			}
+    		)
+    	}
   }
+```
+
+
 
