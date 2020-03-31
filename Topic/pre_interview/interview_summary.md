@@ -22,9 +22,21 @@ xhr.send();
 
 #### 4.cookie，sessionStorage,localStorage
 
+cookie: 
+
+sessionStorage
+
+localStorage:
+
 #### 5.简单介绍下快速排序
 
 #### 6.call,apply,bind的区别
+
+call:使用一个指定的this值和单独给出的一个或多个参数来调用一个函数。
+
+apply:调用一个具有给定this值的函数，以及作为一个数组（类数组对象）提供的参数
+
+bind:创建一个新的函数，
 
 #### 7.事件冒泡，事件捕获，事件委托（事件代理）
 
@@ -65,4 +77,6 @@ props对于使用它的组件来说，是只读的，要想修改Props,只能通
 #### 14.工作中常用的API
 
 #### 15.EventLoop
+
+#### 16.React HooK
 

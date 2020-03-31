@@ -1,10 +1,10 @@
-<https://zh-hans.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects>
+<**https://zh-hans.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects>**
 
 派生state:<https://zh-hans.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component>
 
-生命周期<http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/>
+**生命周期<http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/>**
 
-严格模式：<https://zh-hans.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects>
+**严格模式：<https://zh-hans.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects**>
 
 - **渲染** 阶段会确定需要进行哪些更改，比如 DOM。在此阶段，React 调用 `render`，然后将结果与上次渲染的结果进行比较。
 - **提交** 阶段发生在当 React 应用变化时。（对于 React DOM 来说，会发生在 React 插入，更新及删除 DOM 节点的时候。）在此阶段，React 还会调用 `componentDidMount` 和 `componentDidUpdate` 之类的生命周期方法。
@@ -25,7 +25,7 @@
 
 ![1577003383664](C:\Users\qi\AppData\Roaming\Typora\typora-user-images\1577003383664.png)
 
-#### 1.挂载
+### 1.挂载
 
 当组件实例被创建并插入 DOM 中时，其生命周期调用顺序如下：
 
@@ -40,7 +40,7 @@
 
 - [`UNSAFE_componentWillMount()`](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillmount)
 
-#### 2.更新
+### 2.更新
 
 当组件的 props 或 state 发生变化时会触发更新。组件更新的生命周期调用顺序如下：
 
@@ -57,37 +57,37 @@
 - [`UNSAFE_componentWillUpdate()`](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillupdate)
 - [`UNSAFE_componentWillReceiveProps()`](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)
 
-#### 3.卸载
+### 3.卸载
 
 当组件从 DOM 中移除时会调用如下方法：
 
 - [**componentWillUnmount()**](https://zh-hans.reactjs.org/docs/react-component.html#componentwillunmount)
 
-#### 4.错误处理
+### 4.错误处理
 
 当渲染过程，生命周期，或子组件的构造函数中抛出错误时，会调用如下方法：
 
 - [`static getDerivedStateFromError()`](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromerror)
 - [`componentDidCatch()`](https://zh-hans.reactjs.org/docs/react-component.html#componentdidcatch)
 
-#### 5.其他 APIs
+### 5.其他 APIs
 
 **组件还提供了一些额外的 API：**
 
 - [`setState()`](https://zh-hans.reactjs.org/docs/react-component.html#setstate)
 - [`forceUpdate()`](https://zh-hans.reactjs.org/docs/react-component.html#forceupdate)
 
-#### 6.class 属性
+### 6.class 属性
 
 - [`defaultProps`](https://zh-hans.reactjs.org/docs/react-component.html#defaultprops)
 - [`displayName`](https://zh-hans.reactjs.org/docs/react-component.html#displayname)
 
-#### 7.实例属性
+### 7.实例属性
 
 - [`props`](https://zh-hans.reactjs.org/docs/react-component.html#props)
 - [`state`](https://zh-hans.reactjs.org/docs/react-component.html#state)
 
-#### 8.当 `render` 被调用时，它会检查 `this.props` 和 `this.state` 的变化并返回以下类型之一：
+### 8.当 `render` 被调用时，它会检查 `this.props` 和 `this.state` 的变化并返回以下类型之一：
 
 - **React 元素**。通常通过 JSX 创建。例如，`<div />` 会被 React 渲染为 DOM 节点，`<MyComponent />` 会被 React 渲染为自定义组件，无论是 `<div />` 还是 `<MyComponent />` 均为 React 元素。
 - **数组或 fragments**。 使得 render 方法可以返回多个元素。欲了解更多详细信息，请参阅 [fragments](https://zh-hans.reactjs.org/docs/fragments.html) 文档。
@@ -99,11 +99,11 @@
 
 ![1577003594189](C:\Users\qi\AppData\Roaming\Typora\typora-user-images\1577003594189.png)
 
-#### 9.**如果不初始化 state 或不进行方法绑定，则不需要为 React 组件实现构造函数。**
+### 9.**如果不初始化 state 或不进行方法绑定，则不需要为 React 组件实现构造函数。**
 
 在 React 组件挂载之前，会调用它的构造函数。在为 React.Component 子类实现构造函数时，应在其他语句之前前调用 `super(props)`。否则，`this.props` 在构造函数中可能会出现未定义的 bug。
 
-#### 10.在 `constructor()` 函数中**不要调用 setState() 方法**。如果你的组件需要使用内部 state，请直接在构造函数中为 **this.state 赋值初始 state**：
+### 10.在 `constructor()` 函数中**不要调用 setState() 方法**。如果你的组件需要使用内部 state，请直接在构造函数中为 **this.state 赋值初始 state**：
 
 ```
 constructor(props) {
@@ -114,7 +114,7 @@ constructor(props) {
 }
 ```
 
-#### 11.注意
+### 11.注意
 
 **避免将 props 的值复制给 state！这是一个常见的错误：**
 
@@ -130,15 +130,15 @@ constructor(props) {
 
 **只有在你刻意忽略 prop 更新的情况下使用。**此时，应将 prop 重命名为 `initialColor` 或 `defaultColor`。必要时，你可以[修改它的 `key`](https://zh-hans.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key)，以强制“重置”其内部 state。
 
-#### 12.常用的生命周期
+### 12.常用的生命周期
 
-##### 1.`componentDidMount()`
+#### 1.`componentDidMount()`
 
-##### 会在组件挂载后（插入 DOM 树中）立即调用。依赖于 DOM 节点的初始化应该放在这里。如需通过网络请求获取数据，此处是实例化请求的好地方。这个方法是比较适合添加订阅的地方。如果添加了订阅，请不要忘记在 `componentWillUnmount()` 里取消订阅
+**会在组件挂载后（插入 DOM 树中）立即调用。依赖于 DOM 节点的初始化应该放在这里。如需通过网络请求获取数据，此处是实例化请求的好地方。这个方法是比较适合添加订阅的地方。如果添加了订阅，请不要忘记在 `componentWillUnmount()` 里取消订阅**
 
 你可以在 `componentDidMount()` 里**直接调用 setState()**。它将触发额外渲染，但此渲染会发生在浏览器更新屏幕之前。如此保证了即使在 `render()` 两次调用的情况下，用户也不会看到中间状态。请谨慎使用该模式，因为它会导致性能问题。
 
-##### 2.componentDidUpdate(prevProps, prevState, snapshot)
+#### 2.componentDidUpdate(prevProps, prevState, snapshot)
 
 `componentDidUpdate()` 会在更新后会被立即调用。首次渲染不会执行此方法。当组件更新后，可以在此处对 DOM 进行操作。如果你对更新前后的 props 进行了比较，也可以选择在此处进行网络请求。（例如，当 props 未发生变化时，则不会执行网络请求）。
 
@@ -157,17 +157,17 @@ componentDidUpdate(prevProps) {
 
 ![1577004335465](C:\Users\qi\AppData\Roaming\Typora\typora-user-images\1577004335465.png)
 
-##### 3.componentWillUnmount()
+#### 3.componentWillUnmount()
 
 `componentWillUnmount()` 会在组件卸载及销毁之前直接调用。在此方法中执行必要的清理操作，例如，清除 timer，取消网络请求或清除在 `componentDidMount()` 中创建的订阅等。
 
 `componentWillUnmount()` 中**不应调用 setState()**，因为该组件将永远不会重新渲染。组件实例卸载后，将永远不会再挂载它。
 
-#### 13.不常用的生命周期方法
+### 13.不常用的生命周期方法
 
-##### 1.shouldComponentUpdate(nextProps, nextState)
+#### 1.shouldComponentUpdate(nextProps, nextState)
 
-##### 当 props 或 state 发生变化时，`shouldComponentUpdate()` 会在渲染执行之前被调用。返回值默认为 true。首次渲染或使用 `forceUpdate()` 时不会调用该方法。
+**当 props 或 state 发生变化时，`shouldComponentUpdate()` 会在渲染执行之前被调用。返回值默认为 true。首次渲染或使用 `forceUpdate()` 时不会调用该方法。**
 
 根据 `shouldComponentUpdate()` 的返回值，判断 React 组件的输出是否受当前 state 或 props 更改的影响。默认行为是 state 每次发生变化组件都会重新渲染。大部分情况下，你应该遵循默认行为。
 
@@ -177,7 +177,7 @@ componentDidUpdate(prevProps) {
 
 **目前，如果 shouldComponentUpdate() 返回 false，则不会调用 UNSAFE_componentWillUpdate()，render() 和 componentDidUpdate()。后续版本，React 可能会将 shouldComponentUpdate 视为提示而不是严格的指令，并且，当返回 false 时，仍可能导致组件重新渲染。**
 
-##### 2.static getDerivedStateFromProps(props, state)
+#### 2.static getDerivedStateFromProps(props, state)
 
 `getDerivedStateFromProps` 会在调用 render 方法之前调用，并且在初始挂载及后续更新时都会被调用。它应返回一个对象来更新 state，如果返回 null 则不更新任何内容。
 
@@ -187,7 +187,7 @@ componentDidUpdate(prevProps) {
 
 此方法无权访问组件实例。如果你需要，可以通过提取组件 props 的纯函数及 class 之外的状态，在`getDerivedStateFromProps()`和其他 class 方法之间重用代码。
 
-##### 3.getSnapshotBeforeUpdate(prevProps, prevState)
+#### 3.getSnapshotBeforeUpdate(prevProps, prevState)
 
 ```
 class ScrollingList extends React.Component {
@@ -224,26 +224,26 @@ class ScrollingList extends React.Component {
 }
 ```
 
-##### 4.static getDerivedStateFromError(error)
+#### 4.static getDerivedStateFromError(error)
 
 注意
 
 `getDerivedStateFromError()` 会在`渲染`阶段调用，因此不允许出现副作用。 如遇此类情况，请改用 `componentDidCatch()`。
 
-##### 5.componentDidCatch(error, info)
+#### 5.componentDidCatch(error, info)
 
 1. `error` —— 抛出的错误。
 2. `info` —— 带有 `componentStack` key 的对象，其中包含[有关组件引发错误的栈信息](https://zh-hans.reactjs.org/docs/error-boundaries.html#component-stack-traces)。
 
 `componentDidCatch()` 会在“提交”阶段被调用，因此允许执行副作用。 它应该用于记录错误之类的情况：
 
-#### 14.过时的生命周期
+### 14.过时的生命周期
 
-##### 1.componentWillMount（）
+#### 1.componentWillMount（）
 
 避免在此方法中引入任何副作用或订阅。如遇此种情况，请改用 componentDidMount()。
 
-##### 2.componentWillReceiveProps（）
+#### 2.componentWillReceiveProps（）
 
 注意:
 
@@ -253,7 +253,7 @@ class ScrollingList extends React.Component {
 - 如果你使用 `componentWillReceiveProps` **仅在 prop 更改时重新计算某些数据**，请[使用 memoization helper 代替](https://zh-hans.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization)。
 - 如果你使用 `componentWillReceiveProps` 是为了**在 prop 更改时“重置”某些 state**，请考虑使组件[完全受控](https://zh-hans.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component)或[使用 `key` 使组件完全不受控](https://zh-hans.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key) 代替。
 
-##### 3.componentWillUpdate(nextProps, nextState)
+#### 3.componentWillUpdate(nextProps, nextState)
 
 ![1577006357926](C:\Users\qi\AppData\Roaming\Typora\typora-user-images\1577006357926.png)
 
@@ -262,6 +262,90 @@ class ScrollingList extends React.Component {
 - [深入学习：何时以及为什么 `setState()` 会批量执行？](https://stackoverflow.com/a/48610973/458193)
 - [深入：为什么不直接更新 `this.state`？](https://github.com/facebook/react/issues/11527#issuecomment-360199710)
 
-```
+```js
 component.forceUpdate(callback)
 ```
+
+### 15.React Hook
+
+#### **1.只在最顶层使用Hook**
+
+**不要在循环，条件或嵌套函数中调用Hook.**，确保总是在你的React函数的最顶层调用他们，这样就能确保Hook在没一次渲染中都按照同样的顺序被调用。
+
+#### 2.只在React函数中调用Hook
+
+不要在普通的JavaScript函数中调用Hook.
+
+**在React的函数组件中调用Hook**
+
+**在自定义Hook中调用其他Hook**
+
+只要Hook的调用顺序在多次渲染之间保持一致，React就能正确地将内部state和对应的Hook进行关联。
+
+```jsx
+ useEffect(function persistForm() {
+    // 👍 将条件判断放置在 effect 中
+    if (name !== '') {
+      localStorage.setItem('formData', name);
+    }
+  });
+```
+
+#### 3.提取自定义Hook
+
+自定义Hook是一个函数，其名称以“use”开头，函数内部可以调用其他的Hook
+
+#### 4.Hook API索引
+
+基础Hook：
+
+- useState
+- useEffect
+- useContext
+
+额外的Hook
+
+- useReducer
+- useCallback
+- useMemo
+- useRef
+- useImperativeHandle
+- useLayoutEffect
+- useDebugValue
+
+##### useState:返回一个state,以及更新state的函数
+
+```js
+const [state, setState] = useState(initialState)
+```
+
+##### useEffect:该Hook接收一个包含命令式、且可能有副作用的函数
+
+```js
+useEffect(didUpdate);
+```
+
+```js
+useEffect(() => {
+  const subscription = props.source.subscribe();
+  return () => {
+    // 清除订阅
+    subscription.unsubscribe();
+  };
+});
+```
+
+为防止内存泄漏，清除函数会在组件卸载前执行。另外，如果组件多次渲染（通常如此），则**在执行下一个 effect 之前，上一个 effect 就已被清除**。
+
+##### **effect 的条件执行**
+
+默认情况下，effect 会在每轮组件渲染完成后执行。这样的话，一旦 effect 的依赖发生变化，它就会被重新创建。
+
+如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组（`[]`）作为第二个参数。这就告诉 React 你的 effect 不依赖于 props 或 state 中的任何值，所以它永远都不需要重复执行。这并不属于特殊情况 —— 它依然遵循输入数组的工作方式
+
+##### useContext:接收一个context对象（React.createContext的返回值）并返回该context的当前值。
+
+```js
+const value = useContext(MyContext);
+```
+
