@@ -27,3 +27,4 @@ MDN上的解释：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Refere
 
 #### 实现observer(可观察的）
 
+### 2.实现 Virtual DOM 下的一个 VNode 节点
