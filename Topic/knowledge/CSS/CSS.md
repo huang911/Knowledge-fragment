@@ -1,28 +1,27 @@
-#### 1.介绍BFC及其应用
+### 1.介绍BFC及其应用
 
 BFC就是块级格式上下文，是页面盒模型布局中的一种CSS渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。
 
 创建BFC的方式：
 
+```js
 a.html根元素
-
 b.float浮动
-
 c.绝对定位
-
 d.overflow不为visiable
-
 e.display为表格布局或者弹性布局
+```
 
 BFC的作用：
 
+```
 a.清除浮动
-
 b.防止同一BFC容器中的相邻元素间的外边距重叠问题。
+```
 
 MDN：<https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context>
 
-#### 2.opacity: 0、visibility: hidden、display: none
+### 2.opacity: 0、visibility: hidden、display: none
 
 - `display: none;`
 
@@ -48,25 +47,24 @@ MDN：<https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_c
 4. **继 承**：会被子元素继承,且，子元素并不能通过 `opacity: 1` 来取消隐藏；
 5. **transition**：`transition` 不支持 `opacity`
 
-#### 3.省略效果
+### 3.省略效果
 
 单行：
 
+```css
 overflow:hidden;
-
 text-overflow:ellipsis;
-
 white-space:nowrap;
+```
 
 多行：
 
+```css
 display: -webkit-box;
-
 -webkit-box-orient:vertical;
-
 -webkit-line-clamp:3;
-
 overflow:hidden;
+```
 
 js:
 
@@ -80,25 +78,25 @@ while (p.scrollHeight > p.clientHeight) {
 }
 ```
 
-#### 4.介绍下 BFC、IFC、GFC 和 FFC
+### 4.介绍下 BFC、IFC、GFC 和 FFC
 
-##### BFC：块级格式上下文 
+**BFC：块级格式上下文** 
 
 页面上的一个隔离的渲染区域那么他是如何产生的呢？可以触发BFC的元素有float、position、overflow、display：table-cell/ inline-block/table-caption ；BFC有什么作用呢？比如说实现多栏布局’
 
-##### IFC：内联格式上下文
+**IFC：内联格式上下文**
 
 IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)IFC中的line box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。float元素会位于IFC与与line box之间，使得line box宽度缩短。 同个ifc下的多个line box高度会不同 IFC中时不可能有块级元素的，当插入块级元素时（如p中插入div）会产生两个匿名块与div分隔开，即产生两个IFC，每个IFC对外表现为块级元素，与div垂直排列。 那么IFC一般有什么用呢？ 水平居中：当一个块要在环境中水平居中时，设置其为inline-block则会在外层产生IFC，通过text-align则可以使其水平居中。 垂直居中：创建一个IFC，用其中一个元素撑开父元素的高度，然后设置其vertical-align:middle，其他行内元素则可以在此父元素下垂直居中。
 
-##### GFC：网格布局格式上下文
+**GFC：网格布局格式上下文**
 
 当为一个元素设置display值为grid,次元素将会获得一个独立的渲染区域，我们可以通过在网格容器上定义行和网格定义列属性各在网格项目上定义网格型和网格列为每一个网格项目定义位置和空间。
 
-##### FFC：自适应格式上下文
+**FFC：自适应格式上下文**
 
 display值为flex或者inline-flex的元素将会生成自适应容器。
 
-#### 5.边界重叠
+### 5.边界重叠
 
 **是指两个或多个盒子（可能相邻也可能嵌套）的相邻边界（其间没有任何非空内容、补白、边框）重合在一起，形成一个单一边界。**
 
@@ -127,3 +125,49 @@ display值为flex或者inline-flex的元素将会生成自适应容器。
 - 外层元素 overflow:hidden;
 - 内层元素 加float:left;或display:inline-block;
   内层元素padding:1px;
+
+### 6.CSS选择器的优先级是如何计算的？
+
+```
+a.表示是否使用内联样式，如果使用，则a为1，否则为0；
+b.表示ID选择器的数量；
+c.表示类选择器、属性选择器和伪类选择器数量之和；
+d.表示标签（类型）选择器和伪元素选择器之和；
+a,b,c,d权重从左到右，依次减小
+0，1，0，0的优先级高于0，0，10，10。
+```
+
+### 7.重置（reseting）CSS和标准化（normalizing）CSS 的区别是什么？你会选择哪种方式，为什么？
+
+ 重置： 意味着去除所有的浏览器默认样式。对页面所有的元素，像margin,padding,font-size这些样式全部置成一样。必须重新定义所有元素的样式。
+
+标准化： 没有去掉所有的默认样式，而是保留了有用的一部分，同时还纠正了一些常见错误。
+
+### 8.display的属性值都有哪些？
+
+| 值            | 描述                                                         |
+| ------------- | ------------------------------------------------------------ |
+| none          | 此元素不会被显示                                             |
+| block         | 此元素将显示为块级元素，此元素前后会带有换行符               |
+| inline        | 默认。此元素会被显示为内联元素，元素前后没有换行符。         |
+| inline-block  | 行内块元素。                                                 |
+| list-item     | 此元素会作为列表显示。                                       |
+| run-in        | 此元素会根据上下文作为块级元素或内联元素显示。               |
+| table         | 此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。 |
+| inline-table  | 此元素会作为内联表格来显示（类似 <table>），表格前后没有换行符。 |
+| inherit       | 规定应该从父元素继承 display 属性的值                        |
+| table-row     | 此元素会作为一个表格行显示（类似 <tr>）。                    |
+| table-column  | 此元素会作为一个单元格列显示（类似 <col>）                   |
+| table-cell    | 此元素会作为一个表格单元格显示（类似 <td> 和 <th>）          |
+| table-caption | 此元素会作为一个表格标题显示（类似 <caption>）               |
+
+### 9.什么情况下，用translate()而不用绝对定位？什么时候，情况相反。
+
+translate()是transform的一个值。改变transgorm或opacity不会触发浏览器重新布局（reflow）或重绘（repaint)，只会触发复合（compositions).而改变绝对定位会触发重新布局，进而触发重绘和复合。
+
+transform使浏览器为元素创建一个GPU图层，但改变绝对定位会使用到CPU。因此translate()更高效，可以缩短平滑动画的绘制时间。
+
+当使用translate()时，元素仍然占据其原始空间（类似： position: relative）。这与改变绝对定位不同。
+
+如果要基于元素原来的位置做调整，我们可以使用translate进行平移变化；而如果要把元素放在页面或者父元素的指定位置，我们可以使用绝对定位脱标布局。
+
