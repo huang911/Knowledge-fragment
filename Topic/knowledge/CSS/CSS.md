@@ -171,3 +171,48 @@ transform使浏览器为元素创建一个GPU图层，但改变绝对定位会�
 
 如果要基于元素原来的位置做调整，我们可以使用translate进行平移变化；而如果要把元素放在页面或者父元素的指定位置，我们可以使用绝对定位脱标布局。
 
+### 10.实现水平垂直居中
+
+https://juejin.im/post/6844903474879004680
+
+2.垂直居中：
+
+a.行内块级元素：
+
+```css
+.parent::after, .son {
+	display: inline-block,
+	vertical-align: middle
+}
+.parent::after {
+	content: '';
+	height: 100%;
+}
+```
+
+b.元素高度固定：
+
+```css
+方案1：
+.parent {
+  position: relative;
+}
+.son {
+  position: absolute;
+  top: 50%;
+  height: 固定；
+  margin-top: -0.5高度；
+}
+方案2：
+.parent {
+  position: relative;
+}
+.son {
+  position: absolute;
+  height: 固定；
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+```
+
