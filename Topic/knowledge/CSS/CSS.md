@@ -1,22 +1,43 @@
 ### 1.介绍BFC及其应用
 
-BFC就是块级格式上下文，是页面盒模型布局中的一种CSS渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。
+BFC就是**块级格式上下文**，是页面盒模型布局中的一种CSS渲染模式，相当于一个隔离的独立容器，里面的元素和外部的元素相互不影响。
 
 创建BFC的方式：
 
 ```js
 a.html根元素
-b.float浮动
+b.float浮动，float属性不为none
 c.绝对定位
 d.overflow不为visiable
-e.display为表格布局或者弹性布局
+e.display为表格布局或者弹性布局(inline-block, table-cell, table-caption,flex,inline-flex)
+```
+
+扩展：
+
+```js
+float的属性：left,right,none,inherit
+overflow的属性：visiable,hidden,scroll,auto
+```
+
+块级格式化上下文布局规则：
+
+```js
+1.内部的BOX会在垂直方向一个接一个的放置
+2.属于同一个BFC的两个相邻BOX的margin会重叠；不同BFC就不会
+3.是页面上一个隔离的独立容器，里面的元素不会影响到外面的元素；反之亦然
+4.BFC的区域不会和float box重叠
+5.计算BFC的高度，浮动元素也参与计算
 ```
 
 BFC的作用：
 
 ```
-a.清除浮动
-b.防止同一BFC容器中的相邻元素间的外边距重叠问题。
+a.清除内部的浮动，触发父元素的BFC属性，会包含float元素
+  防止浮动导致父元素高度塌陷父级设置overflow：hidden，元素float:right
+b.分属于不同的BFC，可以阻止margin重叠
+  避免margin重叠，两个块相邻就会导致外边距被折叠，给中间的设置BFC就会避免，方法就是套个父级设置overflow：hindden
+c.阻止元素被浮动元素覆盖，各自是独立的渲染区域；
+d.自适应两栏布局
 ```
 
 MDN：<https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context>
