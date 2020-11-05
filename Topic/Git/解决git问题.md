@@ -1,6 +1,6 @@
 //参考 http://howiefh.github.io/2014/10/11/git-encoding/
 
-1.中文乱码问题：
+### 1.中文乱码问题：
 
 `$ git config --global core.quotepath false          # 显示 status 编码`
 
@@ -43,10 +43,30 @@ export LESSCHARSET=utf-8
 
 4. `export LESSCHARSET=utf-8`使得 $ git log 可以正常显示中文（配合i18n.logoutputencoding 的设置)
 
-## 让 ls 命令可以显示中文名称
+### 2.让 ls 命令可以显示中文名称
 
 修改 etc\git-completion.bash 文件：
 
 ```
 alias ls="ls --show-control-chars --color"
 ```
+
+### 3.关联/修改Git远程仓库地址
+
+#### 1.删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址
+
+```git
+git remote -v //查看git对应的远程仓库地址
+git remote rm origin //删除关联对应的远程仓库地址
+git remote -v //查看是否删除成功，如果没有任何返回结果，表示OK
+git remote add origin https://github.com/developers-youcong/Metronic_Template.git //重新关联git远程仓库地址
+```
+
+#### 2.直接修改本地仓库所关联的远程仓库的地址
+
+```
+git remote  //查看远程仓库名称：origin 
+git remote get-url origin //查看远程仓库地址
+git remote set-url origin https://github.com/developers-youcong/Metronic_Template.git  ( 如果未设置ssh-key，此处仓库地址为 http://... 开头)
+```
+
