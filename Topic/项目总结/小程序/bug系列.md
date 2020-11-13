@@ -70,3 +70,11 @@ while(t > 1000) {
 **解决办法：** 
 
 用setInterval写定时器更新，在离开页面时，清除定时器。
+
+### 情形六：
+
+如果字段类型是string类型，无法在wxml里进行三元表达式判断，可以在j s判断或者wxs中判断。
+
+### 情形七：
+
+如果在组件中使用了外部样式需在组件中加，options: {addGlobalClass: true},组件用了behaviors,在behaviors里写options: {addGlobalClass: true}不生效，只能在组件里写。
