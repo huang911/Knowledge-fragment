@@ -1,0 +1,123 @@
+/* common */
+@keyframes hand-move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+.circle-clip {
+  position: absolute;
+  z-index: 10;
+  border-color: rgba(0, 0, 0, 0.51);
+  border-style: solid;
+}
+.finger-img {
+  width: 48rpx;
+  height: 48rpx;
+  animation: hand-move 0.5s infinite linear;
+}
+/* 欢迎弹框 */
+.welcome-dialog {
+  left: 50%;
+  top: 900rpx;
+  transform: translateX(-50%);
+  width: 626rpx;
+}
+/* 收集心愿 */
+.collect-dialog {
+  left: 50%;
+  top: 700rpx;
+  transform: translateX(-50%);
+  width: 626rpx;
+}
+.collect-clip {
+  width: 152rpx;
+  height: 152rpx;
+  border-width: 600rpx 200rpx 1000rpx 400rpx;
+}
+.collect-click-area {
+  position: absolute;
+  top: 25rpx;
+  left: 25rpx;
+  width: 120rpx;
+  height: 60rpx;
+}
+.collect-finger {
+  margin: 83rpx 53rpx 19rpx;
+}
+/* 选择心愿屋 */
+.select-wish-mask {
+  background: rgba(0, 0, 0, 0.51);
+}
+/* 兑换商品 */
+.exchange-dialog {
+  top: 850rpx;
+  left: 30rpx;
+  width: 472rpx;
+}
+.exchange-finger {
+  margin: 146rpx 48rpx 82rpx 180rpx;
+}
+.exchange-click-area {
+  position: absolute;
+  width: 276rpx;
+  height: 276rpx;
+}
+/* 商城商品兑换引导 */
+.mall-select-dialog {
+  top: 745rpx;
+  left: 134rpx;
+  width: 426rpx; 
+}
+.mall-select-clip {
+  width: 570rpx;
+  height: 425rpx;
+  border-width: 308rpx 94rpx 1000rpx 94rpx;
+}
+.mall-finger {
+  margin: 200rpx 30rpx -19rpx 100rpx;
+}
+.mall-click-area  {
+  position: absolute;
+  bottom: 18rpx;
+  left: 20rpx;
+  width: 256rpx;
+  height: 64rpx;
+}
+/* 心愿值不够toast */
+.mall-toast-mask {
+  background: rgba(0, 0, 0, 0.51);
+}
+.mall-select-toast {
+  width: 504rpx;
+  height: 394rpx;
+  top: 564rpx;
+  left: 136rpx;
+}
+/* 任务中心 */
+.task-clip {
+  width: 280rpx;
+  height: 280rpx;
+}
+.task-finger {
+  margin: 190rpx 73rpx 42rpx 158rpx;
+}
+.task-dialog {
+  top: 686rpx;
+  left: 80rpx;
+  width: 504rpx;
+}
+/*  新用户礼包 */
+.user-gift-mask {
+  background: rgba(0, 0, 0, 0.51);
+}

@@ -1,0 +1,11 @@
+<!-- 飞翔的心愿 -->
+<image
+    wx:for="{{coinAnimationDelay.length}}"
+    wx:for-index="index"
+    wx:for-item="item"
+    wx:key="index"
+    animation="{{collectAnimation[index]}}"
+    style="top:{{startPosition.top}}rpx;left:{{startPosition.left}}rpx;z-index:9;"
+    class="fly-coin"
+    src="/static/imgs/red_bag.png"
+/>

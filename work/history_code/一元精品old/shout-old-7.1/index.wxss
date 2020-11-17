@@ -1,0 +1,52 @@
+@keyframes forward {
+  0% {
+    bottom: 150rpx;
+    left: -100%;
+  }
+  50% {
+    bottom: 150rpx;
+    left: 200rpx;
+  }
+  100% {
+    bottom: 0;
+    left: 200rpx;
+  }
+}
+@keyframes backwrad {
+  0% {
+    bottom: 0;
+    left: 200rpx;
+  }
+  50% {
+    bottom: 150rpx;
+    left: 200rpx;
+  }
+  100% {
+    bottom: 150rpx;
+    left: 500rpx;
+  }
+}
+
+.shout-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 200rpx;
+  background: red;
+}
+.start-animal {
+  position: absolute;
+  bottom: 150rpx;
+  left: -100%;
+  /* animation: 4s linear 1 move; */
+  /* http://file.ihuayue.cn/group1/M00/7E/1D/ChtgcV74YEOAWms4AAAm3LimZDY538.png
+  http://file.ihuayue.cn/group2/M00/7F/1A/ChtgdF74X4GAZTJ6AAAkzuPV1gs671.png
+  http://file.ihuayue.cn/group2/M00/7F/19/ChtgeF74X3mAJAfXAAAxNb7tTFU208.png */
+}
+.stop-animal {
+  position: absolute;
+  bottom: 0;
+  left: 200rpx;
+}

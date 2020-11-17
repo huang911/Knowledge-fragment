@@ -1,0 +1,37 @@
+<!-- 吆喝 -->
+<block>
+  <image 
+    animation="{{leftTopAnimation}}"
+    class="rabbit left-top"
+    id="left-top"
+    bindtransitionend="animationEnd"
+    src="http://file.52miniapps.com/group2/M00/7F/19/ChtgeF74X3mAJAfXAAAxNb7tTFU208.png" />
+  <throw-redbag 
+    id="left-top" 
+    startPosition="{{ {left: 110, bottom: 230} }}"
+    custom-class="left-top-container" />
+</block>
+<block>
+  <image 
+    animation="{{rightTopAnimation}}"
+    class="bear right-top"
+    id="right-top"
+    bindtransitionend="animationEnd"
+    src="http://file.52miniapps.com/group2/M00/7F/E4/ChtgdF79wfWAd3idAAAdXADIzPU242.png" />
+   <throw-redbag 
+    id="right-top" 
+    startPosition="{{ {left: 290, bottom: 200} }}"
+    custom-class="right-top-container" />
+</block>
+<block>
+  <image 
+    animation="{{leftBottomAnimation}}"
+    bindtransitionend="animationEnd"
+    id="left-bottom"
+    class="bear left-bottom"
+    src="http://file.52miniapps.com/group2/M00/7F/1A/ChtgdF74X4GAZTJ6AAAkzuPV1gs671.png" />
+  <throw-redbag 
+    id="left-bottom" 
+    startPosition="{{ {left: 60, bottom: 40} }}"
+    custom-class="left-bottom-container" />
+</block>
