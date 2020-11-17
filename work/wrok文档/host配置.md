@@ -1,4 +1,13 @@
+# My hosts
+13.250.177.223 github.com 
+# 访问内网
+172.31.0.120 jira.ihuayue.cn
+172.31.0.120 wiki.ihuayue.cn
+172.31.0.116 gitlab.ihuayue.cn   
+172.31.0.118 admin.ihuayue.cn
+
 # webstatic
+
 118.178.185.71 webstatic.ihuayue.cn
 118.178.185.71 webstatic.jingyu.com
 54.152.13.174 webstatic.dreame.com
