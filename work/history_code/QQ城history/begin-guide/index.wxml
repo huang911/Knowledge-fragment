@@ -1,0 +1,46 @@
+<!-- 欢迎来到QQ城 -->
+<view class="mask welcome-mask" bindtap="closeWelcome" wx:if="{{isShowWelcome}}" catchtouchmove="preventScroll">
+  <guide-toast external-guide-toast="welcome-dialog" toast="{{guideText.welcomeText}}" />
+</view>
+<!-- 收集心愿 -->
+<view class="mask" wx:if="{{isShowCollect}}"  catchtouchmove="preventScroll">
+  <guide-toast external-guide-toast="collect-dialog" toast="{{guideText.starText}}" />
+  <view class="circle-clip collect-clip">
+    <view class="collect-click-area" bindtap="closeCollect"></view>
+    <image class="finger-img collect-finger" src="/static/imgs/hand.png" />
+  </view>
+</view>
+<!-- 兑换物品 -->
+<view class="mask" wx:if="{{isShowExchange}}" catchtouchmove="preventScroll">
+  <guide-toast external-guide-toast="exchange-dialog" toast="{{guideText.exchangeText}}" />
+  <view 
+    class="circle-clip exchange-clip" 
+    style="width: {{QQVIP.width}}rpx; height: {{QQVIP.height}}rpx; border-width: {{QQVIP.top}}rpx {{QQVIP.right}}rpx 1000rpx {{QQVIP.left}}rpx">
+    <view class="exchange-click-area" bindtap="closeExchange"></view>
+    <image class="finger-img exchange-finger" src="/static/imgs/hand.png" />
+  </view>
+</view>
+<!-- 商城引导 -->
+<view class="mask" wx:if="{{isShowMallSelect}}" catchtouchmove="preventScroll" bindtap="closeMallSelect">
+  <guide-toast external-guide-toast="mall-select-dialog" toast="{{guideText.mallSelectText}}" />
+  <view class="circle-clip mall-select-clip">
+  </view>
+</view>
+<!-- 心愿不够 -->
+<view class="mask mall-toast-mask" wx:if="{{isShowMallToast}}" catchtouchmove="preventScroll" bindtap="closeMallToast">
+  <guide-toast external-guide-toast="mall-select-toast" toast="{{guideText.mallToastText}}" />
+</view>
+<!-- 任务中心 -->
+<view class="mask" wx:if="{{isShowTask}}" catchtouchmove="preventScroll">
+  <guide-toast external-guide-toast="task-dialog" toast="{{guideText.taskText}}" />
+  <view 
+    class="circle-clip task-clip" 
+    style="width: {{task.width}}rpx; height: {{task.height}}rpx; border-width: {{task.top}}rpx {{task.right}}rpx 1000rpx {{task.left}}rpx"
+    bindtap="closeTask">
+    <image class="finger-img task-finger" src="/static/imgs/hand.png" />
+  </view>
+</view>
+<!--新用户心愿礼包 -->
+<view class="mask user-gift-mask" wx:if="{{isShowUserGift}}" catchtouchmove="preventScroll">
+  <new-user-gift bindclose="closeUserGift" />
+</view>

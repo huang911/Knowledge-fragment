@@ -1,0 +1,5 @@
+.fly-coin {
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+}

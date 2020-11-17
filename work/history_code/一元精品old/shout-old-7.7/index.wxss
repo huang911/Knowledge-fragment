@@ -1,0 +1,37 @@
+
+.rabbit, 
+.bear {
+  position: absolute;
+}
+.left-top {
+  z-index: -1;
+  left: -100%;
+  top: -10rpx;
+  width: 112rpx;
+  height: 220rpx;
+}
+.right-top {
+  z-index: 1;
+  top: 130rpx;
+  right: -100%;
+  width: 112rpx;
+  height: 136rpx;
+}
+.left-bottom {
+  bottom: 50rpx;
+  left: -100%;
+  width: 112rpx;
+  height: 136rpx;
+}
+.left-top-container {
+  left: 260rpx;
+  bottom: 500rpx;
+}
+.right-top-container {
+  left: 580rpx;
+  bottom: 430rpx;
+}
+.left-bottom-container {
+  left: 120rpx;
+  bottom: 100rpx;
+}

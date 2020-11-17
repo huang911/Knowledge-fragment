@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "guide-toast": "../../guide-toast/index",
+    "select-wish": "../../select-wish/index",
+    "new-user-gift": "../../new-user-gift/index"
+  }
+}

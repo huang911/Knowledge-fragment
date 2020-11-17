@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	#box-wrap {
+		margin: 20px 0 20px 0;
+		background: blue;
+		width: 400px;
+		height: 400px;
+	}
+	#box1, #box2, #box3 {
+		width: 200px;
+		height: 200px;
+		background: red;
+	}
+	#box1 {
+		margin-top: 40px;
+	}
+	#box2 {
+		margin-bottom: 30px;
+		background: yellow;
+	}
+	#box3 {
+		float: right;
+	}
+	#box4 {
+		width: 200px;
+		height: 200px;
+		margin-top: 20px;
+		background: green;
+	}
+</style>
+<body>
+	<div id="box-wrap" onclick="clickWidth()">
+		<div id="box1">box1</div>
+		<div id="box2">box2</div>
+		<div id="box3">box3</div>
+	</div>
+	<div id="box4">
+		box4
+	</div>
+	<script>
+		function clickWidth() {
+			console.log(document.getElementById("box-wrap").clientWidth);
+		}
+	</script>
+</body>
+</html>
