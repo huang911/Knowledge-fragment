@@ -237,3 +237,73 @@ b.元素高度固定：
 }
 ```
 
+11.background
+
+可以在一次声明中定义一个或多个属性：[`background-clip`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-clip)、[`background-color`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-color)、[`background-image`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-image)、[`background-origin`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-origin)、[`background-position`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-position)、[`background-repeat`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-repeat)、[`background-size`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size)，和 [`background-attachment`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-attachment)。
+
+**注意:** [`background-color`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-color) 只能在background的最后一个属性上定义，因为整个元素只有一种背景颜色。
+
+```
+background-attachment: 决定背景图像的位置是在视口内固定，或者随着包含它的区块滚动。
+/* 关键 属性值 */
+background-attachment: scroll;(此关键属性值表示背景相对于元素本身固定， 而不是随着它的内容滚动（对元素边框是有效的）)
+background-attachment: fixed;(此关键属性值表示背景相对于视口固定。即使一个元素拥有滚动机制，背景也不会随着元素的内容滚动.)
+background-attachment: local;(此关键属性值表示背景相对于元素的内容固定。如果一个元素拥有滚动机制，背景将会随着元素的内容滚动， 并且背景的绘制区域和定位区域是相对于可滚动的区域而不是包含他们的边框。)
+
+/* 全局 属性值 */
+background-attachment: inherit;
+background-attachment: initial;
+background-attachment: unset;
+```
+
+```
+background-clip  设置元素的背景（背景图片或颜色）是否延伸到边框、内边距盒子、内容盒子下面。
+/* Keyword values */
+background-clip: border-box;(背景延伸至边框外沿（但是在边框下层）。)
+background-clip: padding-box;(背景延伸至内边距（padding）外沿。不会绘制到边框处。)
+background-clip: content-box;(背景被裁剪至内容区（content box）外沿。)
+background-clip: text;(背景被裁剪成文字的前景色。)
+
+/* Global values */
+background-clip: inherit;
+background-clip: initial;
+background-clip: unset;
+```
+
+```
+background-image: 可以设置多个背景图，以逗号分隔
+```
+
+```
+background-origin 规定了指定背景图片background-image 属性的原点位置的背景相对区域
+注意：当使用 background-attachment 为fixed时，该属性将被忽略不起作用。
+background-origin: border-box
+background-origin: padding-box
+background-origin: content-box
+
+background-origin: inherit
+```
+
+```
+background-position 为每一个背景图片设置初始位置。 这个位置是相对于由 background-origin 定义的位置图层的。
+```
+
+```
+ background-repeat CSS 属性定义背景图像的重复方式。背景图像可以沿着水平轴，垂直轴，两个轴重复，或者根本不重复。
+ /* 单值语法 */
+background-repeat: repeat-x;
+background-repeat: repeat-y;
+background-repeat: repeat;
+background-repeat: space;
+background-repeat: round;
+background-repeat: no-repeat;
+
+/* 双值语法: 水平horizontal | 垂直vertical */
+background-repeat: repeat space;
+background-repeat: repeat repeat;
+background-repeat: round space;
+background-repeat: no-repeat round;
+
+background-repeat: inherit;
+```
+
