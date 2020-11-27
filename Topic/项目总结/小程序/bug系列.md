@@ -15,7 +15,6 @@
 onLoad里面有options参数，在onReady里面可以通过this.options来获取。
 
 ### 情形二：toast/loading
-
 toast提示在手机上上一闪而过，即使设置了toast的展示时间，也没有用。
 
 原因：在showToast之后，hideToast之前，调用了hideLoading。导致toast直接隐藏了。
@@ -35,7 +34,6 @@ toast提示在手机上上一闪而过，即使设置了toast的展示时间，�
 2.wx.showToast应于wx.hideToast配对使用。
 
 ### 情形三：triggerEvent
-
 视频回调采用triggerEvent触发事件，有时候会触发不了，用this.setData更新视图，数据改变了，视图未更新。
 
 **解决办法：**
@@ -43,7 +41,6 @@ toast提示在手机上上一闪而过，即使设置了toast的展示时间，�
 使用自己写的发布订阅模式，EventHub.trigger来触发事件。
 
 ### 情形四：页面变量
-
 在页面设置了全局变量，来回切页面时，前进<->返回，全局变量会一直存在。如果利用全局变量作为请求列表的页数。
 
 **解决办法：**
@@ -51,7 +48,6 @@ toast提示在手机上上一闪而过，即使设置了toast的展示时间，�
 需要在离开页面时，将全局变量置为初始值。
 
 ### 情形五：倒计时
-
 利用while循环，await-async,做倒计时时，未到结束的时候一直执行计时更新，来回切页面时，导致，不是每秒更新，而是跳了好几秒。
 
 错误代码：
@@ -183,3 +179,10 @@ end：表示戛然而止。是默认值。
   实际应用中，`animation-delay`设置了非`0`值，同时不是`step-start`动画形式，此参数慎用，除非元素默认状态就是起始帧状态，否则动画犹如抽风了一样~![img](https://mat1.gtimg.com/www/mb/images/face/1.gif)
 
 - **both**，`forwards`和`backwards`双P, 这是个略考智商的属性，既当爹又当妈的，这可怎么搞！好搞的，如果要求同一时间既爹又妈，你不是人妖，搞不来。但是白天当爹，晚上当妈，我想相对容易多。这里也是如此，`both`是**与**的关系，中文意思是“同时”，表示：动画开始之前是`"from"`或`"0%"`关键帧；动画完成之后是`"to"`或`"100%"`关键帧状态。
+### 情形六：
+
+如果字段类型是string类型，无法在wxml里进行三元表达式判断，可以在j s判断或者wxs中判断。
+
+### 情形七：
+
+如果在组件中使用了外部样式需在组件中加，options: {addGlobalClass: true},组件用了behaviors,在behaviors里写options: {addGlobalClass: true}不生效，只能在组件里写。
