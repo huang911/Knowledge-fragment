@@ -15,8 +15,6 @@
 onLoad里面有options参数，在onReady里面可以通过this.options来获取。
 
 ### 情形二：toast/loading
-toast提示在手机上上一闪而过，即使设置了toast的展示时间，也没有用。
-
 原因：在showToast之后，hideToast之前，调用了hideLoading。导致toast直接隐藏了。
 
 **解决办法：**
@@ -33,21 +31,25 @@ toast提示在手机上上一闪而过，即使设置了toast的展示时间，�
 
 2.wx.showToast应于wx.hideToast配对使用。
 
-### 情形三：triggerEvent
-视频回调采用triggerEvent触发事件，有时候会触发不了，用this.setData更新视图，数据改变了，视图未更新。
+### 情形三：
+
+origin/master
+视频回调采用triggerEvent触发事件，有时候会触发不了，用this.setData更新视图，数据改变了图未更新。
 
 **解决办法：**
 
 使用自己写的发布订阅模式，EventHub.trigger来触发事件。
 
-### 情形四：页面变量
+### 情形四：
+
+origin/master
 在页面设置了全局变量，来回切页面时，前进<->返回，全局变量会一直存在。如果利用全局变量作为请求列表的页数。
 
 **解决办法：**
 
 需要在离开页面时，将全局变量置为初始值。
 
-### 情形五：倒计时
+### 情形五：origin/master
 利用while循环，await-async,做倒计时时，未到结束的时候一直执行计时更新，来回切页面时，导致，不是每秒更新，而是跳了好几秒。
 
 错误代码：

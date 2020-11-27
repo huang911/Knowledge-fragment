@@ -306,4 +306,3 @@ background-repeat: no-repeat round;
 
 background-repeat: inherit;
 ```
-
