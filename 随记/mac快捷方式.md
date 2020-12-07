@@ -16,28 +16,21 @@
 
 - command+o:打开文件
 - command+p:快速打开文件
-
 - ctrl+`:打开默认终端
 - ctrl+shift+`:新建新的终端
-
 - ctrl+shift+Y:打开调试控制台，然后再自行切换终端选项
-
 - command+shift+P/f1:显示命令面板
-
 - shift+command+m:显示错误和警告
-
 - 自定义快捷键
 - command+shift+p =>keyboard shortcuts:输入自己想要的快捷键
-
 - 创建文件和打开文件
 - command+鼠标点击
-
 - command+w:关闭当前窗口
 - ctrl+tab:查看文件编辑历史
-
 - ctrl+-:后退
-
 - ctrl+shift+-:前进
+- du -hs * /du -shc * // 第二个命令能在最后显示一个Total大小，即当前目录的总大小
+- du -sh * | sort -rh  // 显示当前目录下所有文件（包含文件夹）大小，并排序
 
 ### 5.修改mac终端主题
 
