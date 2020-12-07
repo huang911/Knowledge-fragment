@@ -189,10 +189,14 @@ end：表示戛然而止。是默认值。
 
 如果在组件中使用了外部样式需在组件中加，options: {addGlobalClass: true},组件用了behaviors,在behaviors里写options: {addGlobalClass: true}不生效，只能在组件里写。
 
-情形八：
+### 情形八：
 
 在url链接中传输的数据太多，会被截断，解析不了。
 
-情形九：
+JSON.stringify()里面如果包含特殊字符，JSON.parse也会无法解析，需要先用encodeURIComponent先编码，然后再JSON.stringify()
+
+### 情形九：
 
 1.flex两列布局，头像会被挤压。
+
+解决办法：头像大小固定，剩余内容大小设为flex:1
