@@ -703,3 +703,35 @@ console.log(toFlat(entry));
 
 ```
 
+36.形参和实参
+
+```js
+let name = 'jack';
+let size = {
+	width: 800,
+	height: 600
+}
+let types = ['1', '2']
+function foo(name, size, types) {
+	name = 'tome'
+	size = {
+		width: 1080,
+		height: 1980
+	};
+
+	types.push('gif')
+}
+foo(name, size, types)
+console.log(name, size, types)
+// 'jack', {width: 800, height: 600}, ['1', '2', 'gif']
+形参和实参是存在一种引用关系的，就好比变量中的引用关系。我们都知道，变量中的引用关系跟它们的值有关。当值为原始类型时(string,number,boolean等等)，var a=b是各自引用不同的内存地址的，修改不会影响到彼此；当值是对象，数组等非原始类型时，它们引用的是同一个内存地址，修改则会相互影响。
+
+扩展：
+function foo(name, size, types) {
+	name = 'tome'
+	size.width = 1080;
+	types.push('gif')
+}
+// 'jack', {width: 1080, height: 600}, ['1', '2', 'gif']
+```
+
