@@ -12,9 +12,9 @@ https://zhuanlan.zhihu.com/p/34453198
 
 ### 2.建立TCP连接
 
-第一次握手：建立连接，客户端想服务端发送请求报文。
+第一次握手：建立连接，客户端向服务端发送请求报文。
 
-第二次握手：服务器收到请求报文后，如果同意连接，则向客户端发送发送确认报文。
+第二次握手：服务器收到请求报文后，如果同意连接，则向客户端发送确认报文。
 
 第三次握手：客户端收到服务器的确认后，再次向服务器发出确认报文，完成连接。
 
@@ -22,7 +22,7 @@ https://zhuanlan.zhihu.com/p/34453198
 
 浏览器构建http请求报文，并通过TCP协议传送至服务器的指定端口。
 
-##### **http请求报文包括：**
+**http请求报文包括：**
 
 **请求行**：指定http请求的方法、url、http协议版本等
 
@@ -71,7 +71,7 @@ https://zhuanlan.zhihu.com/p/34453198
 
 
 
-另一种：
+## 另一种：
 
 ### 1.域名解析（e.g.解析www.google.com）
 
@@ -98,4 +98,58 @@ https://zhuanlan.zhihu.com/p/34453198
 ### 4.服务器处理HTTP请求
 
 ### 5.关闭TCP连接
+
+## MDN[解释](https://developer.mozilla.org/zh-CN/docs/Web/Performance/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)：
+
+### 1.域名解析：
+
+1.先从浏览器缓存里找IP，浏览器会缓存DNS记录一段时间；
+
+2.如果没找到，再从Hosts文件查找是否有该域名和对应IP --> 路由器缓存没找到-->DNS缓存。
+
+3.如果都没找到：本地域名服务器查询IP地址-->没找到，本地域名服务器向根域名服务器发送请求-->
+
+本地域名服务器向.com顶级域名服务器发送请求-->本地域名服务器向.goole.com域名服务器发送请求，找到该域名，讲对应的IP返回给本地域名服务器。
+
+### 2.建立TCP连接：
+
+第一次握手：建立连接，客户端向服务端发送请求报文。
+
+第二次握手：服务器收到请求报文后，如果同意连接，则向客户端发送确认报文。
+
+第三次握手：客户端收到服务器的确认后，再次向服务器发出确认报文，完成连接。
+
+3.TLS协商
+
+https://mdn.mozillademos.org/files/16746/ssl.jpg
+
+<img src="/Users/huangqi/Library/Application Support/typora-user-images/image-20201224212708335.png" alt="image-20201224212708335" style="zoom:30%;" />
+
+### 3.响应
+
+https://mdn.mozillademos.org/files/16754/congestioncontrol.jpg
+
+<img src="/Users/huangqi/Library/Application Support/typora-user-images/image-20201224213646883.png" alt="image-20201224213646883" style="zoom:30%;" />
+
+### 4.解析
+
+**构建DOM树**
+
+<img src="/Users/huangqi/Library/Application Support/typora-user-images/image-20201224213952249.png" alt="image-20201224213952249" style="zoom:33%;" />
+
+当解析器发现非阻塞资源，例如一张图片，浏览器会请求这些资源并且继续解析。当遇到一个CSS文件时，解析也可以继续进行，但是对于<script>标签（特别是没有 `async` 或者 `defer` 属性）会阻塞渲染并停止HTML的解析。尽管浏览器的预加载扫描器加速了这个过程，但过多的脚本仍然是一个重要的瓶颈
+
+为了确保脚本不会阻塞进程，当JavaScript解析和执行顺序不重要时，可以添加async属性或defer属性。
+
+**构建CSSOM树**
+
+浏览器将CSS规则转换为可以理解和使用的样式映射。浏览器遍历CSS中的每个规则集，根据CSS选择器创建具有父、子和兄弟关系的节点树。
+
+### 5.渲染
+
+渲染步骤包括样式、布局、绘制，在某些情况下还包括合成。在解析步骤中创建的CSSOM树和DOM树组合成一个Render树，然后用于计算每个可见元素的布局，然后将其绘制到屏幕上。
+
+
+
+
 

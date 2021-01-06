@@ -33,7 +33,7 @@ onLoad里面有options参数，在onReady里面可以通过this.options来获取
 
 ### 情形三：
 
-origin/master
+
 视频回调采用triggerEvent触发事件，有时候会触发不了，用this.setData更新视图，数据改变了图未更新。
 
 **解决办法：**
@@ -42,14 +42,50 @@ origin/master
 
 ### 情形四：
 
-origin/master
+
 在页面设置了全局变量，来回切页面时，前进<->返回，全局变量会一直存在。如果利用全局变量作为请求列表的页数。
+
+```js
+每个页面有独立的作用域，并提供模块化能力
+```
 
 **解决办法：**
 
 需要在离开页面时，将全局变量置为初始值。
 
-### 情形五：origin/master
+<img src="https://pic.downk.cc/item/5ff2bd9c3ffa7d37b3feaaad.jpg" style="zoom:30%;">
+
+<img src="https://pic.downk.cc/item/5ff2be293ffa7d37b3feec77.jpg" style="zoom:30%;" />
+
+<img src="https://pic.downk.cc/item/5ff2beb73ffa7d37b3ff2ed8.jpg" style="zoom:30%;" />
+
+模块化：
+
+浏览器中，所有 JavaScript 是在运行在同一个作用域下的，定义的参数或者方法可以被后续加载的脚本访问或者改写。同浏览器不同，小程序中可以将任何一个JavaScript 文件作为一个模块，通过module.exports 或者 exports 对外暴露接口。
+
+根据双线程模型，小程序每一个页面都会独立一个 webview 线程，但逻辑层是单线程的，也就是所有的 webview 线程共享一个 JS 线程。
+
+作用域：
+
+同浏览器中运行的脚本文件有所不同，小程序的脚本的作用域同 NodeJS 更为相似。
+
+在文件中声明的变量和函数只在该文件中有效，不同的文件中可以声明相同名字的变量和函数，不会互相影响
+
+小程序开发框架的逻辑层使用 `JavaScript` 引擎为小程序提供开发者 `JavaScript` 代码的运行环境以及微信小程序的特有功能。
+
+逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。
+
+开发者写的所有代码最终将会打包成一份 `JavaScript` 文件，并在小程序启动的时候运行，直到小程序销毁。这一行为类似 [ServiceWorker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)，所以逻辑层也称之为 App Service。
+
+在 `JavaScript` 的基础上，我们增加了一些功能，以方便小程序的开发：
+
+- 增加 `App` 和 `Page` 方法，进行[程序注册](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html)和[页面注册](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html)。
+- 增加 `getApp` 和 `getCurrentPages` 方法，分别用来获取 `App` 实例和当前页面栈。
+- 提供丰富的 [API](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html)，如微信用户数据，扫一扫，支付等微信特有能力。
+- 提供[模块化](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/module.html#模块化)能力，每个页面有独立的[作用域](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/module.html#文件作用域)
+
+### 情形五:
+
 利用while循环，await-async,做倒计时时，未到结束的时候一直执行计时更新，来回切页面时，导致，不是每秒更新，而是跳了好几秒。
 
 错误代码：
