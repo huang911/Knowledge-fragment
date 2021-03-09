@@ -20,3 +20,6 @@ https://zhuanlan.zhihu.com/p/53599723
 在React的class组件中，render函数是不应该有任何副作用的，一般来说，在这里执行操作太早了，我们基本都希望在React更新DOM之后，才执行我们的操作。
 
 这就是把副作用操作放到componentDidMount和componentDidUpdate函数中。
+
+### 4.React key是干什么用的,为什么要加上key呢?
+
