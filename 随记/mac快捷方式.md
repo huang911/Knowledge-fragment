@@ -36,3 +36,4 @@
 
 https://blog.csdn.net/u010391437/article/details/75126310
 
+ 6.command +N 新开一个文件目录窗口

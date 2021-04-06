@@ -49,8 +49,5 @@ const combineReducers = reducers => {
     			}
     		)
     	}
-  }
+}
 ```
-
-
-

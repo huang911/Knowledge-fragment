@@ -42,7 +42,8 @@
  */
 var CustomStack = function (maxSize) {
     //TODO
-    
+    this.stack = new Array()
+    this.maxSize = maxSize
 };
 
 /** 
@@ -51,6 +52,7 @@ var CustomStack = function (maxSize) {
  */
 CustomStack.prototype.push = function (x) {
     //TODO
+    this.statck.length < this.maxSize && this.stack.push(x)
 };
 
 /**
@@ -58,6 +60,7 @@ CustomStack.prototype.push = function (x) {
  */
 CustomStack.prototype.pop = function () {
     //TODO
+    return this.stack.shift() || -1
 };
 
 /** 
@@ -67,9 +70,54 @@ CustomStack.prototype.pop = function () {
  */
 CustomStack.prototype.increment = function (k, val) {
     //TODO
+    this.stack.forEach((item, index) => {
+        if (index <= k) {
+            item += val
+        }
+    })
 };
 
 ```
 // @interview start
+```
+/**
+ * @param {number} maxSize
+ */
+var CustomStack = function (maxSize) {
+    //TODO
+    this.stack = new Array()
+    this.maxSize = maxSize
+};
 
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+CustomStack.prototype.push = function (x) {
+    //TODO
+    this.statck.length < this.maxSize && this.stack.push(x)
+};
+
+/**
+ * @return {number}
+ */
+CustomStack.prototype.pop = function () {
+    //TODO
+    return this.stack.shift() || -1
+};
+
+/** 
+ * @param {number} k 
+ * @param {number} val
+ * @return {void}
+ */
+CustomStack.prototype.increment = function (k, val) {
+    //TODO
+    this.stack.forEach((item, index) => {
+        if (index <= k) {
+            item += val
+        }
+    })
+};
+```
 // @interview end

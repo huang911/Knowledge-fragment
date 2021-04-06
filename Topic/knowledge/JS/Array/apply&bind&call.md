@@ -60,6 +60,39 @@ arg1, arg2, ...
 
 使用调用者提供的this值和参数调用该函数的返回值。若该方法没有返回值， 则返回undefined;
 
+4.手写apply,call,bind
+
+```js
+Function.prototype.bind = function(context, ...args) {
+    context = context || window
+    const fnSymbol = Symbol('fn')
+      context[fnSymbol] = this
+    return function(..._args) {
+       args = args.concat(_args) 
+       context[fnSymbol](..args)
+       delete context[fnSymbol]
+    }
+}
+Function.prototype.apply = function(context, argArr) {
+    context = context || window
+    const fnSymbol = Symbol('fn')
+    
+   context[fnSymbol] = this
+   context[fnSymbol](..argArr)
+   
+   delete context[fnSymbol]
+}
+Function.prototype.call = function(context, ...args) {
+    context = context || window
+    const fnSymbol = Symbol('fn')
+    
+   context[fnSymbol] = this
+   context[fnSymbol](..args)
+   
+   delete context[fnSymbol]
+}
+```
+
 
 
 
