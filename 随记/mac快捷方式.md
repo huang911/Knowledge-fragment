@@ -31,9 +31,19 @@
 - ctrl+shift+-:前进
 - du -hs * /du -shc * // 第二个命令能在最后显示一个Total大小，即当前目录的总大小
 - du -sh * | sort -rh  // 显示当前目录下所有文件（包含文件夹）大小，并排序
+- **win+shift: 鼠标快速选择某一列**
 
 ### 5.修改mac终端主题
 
 https://blog.csdn.net/u010391437/article/details/75126310
 
- 6.command +N 新开一个文件目录窗口
+###  **6.command +N 新开一个文件目录窗口**
+
+### 7.关闭系统自动更新提示
+
+```
+sudo softwareupdate --ignore "macOS Catalina"
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0 
+killall Dock 
+```
+
