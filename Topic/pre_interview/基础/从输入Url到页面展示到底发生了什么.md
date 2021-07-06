@@ -149,6 +149,7 @@ https://mdn.mozillademos.org/files/16754/congestioncontrol.jpg
 
 渲染步骤包括样式、布局、绘制，在某些情况下还包括合成。在解析步骤中创建的CSSOM树和DOM树组合成一个Render树，然后用于计算每个可见元素的布局，然后将其绘制到屏幕上。
 
+https://mp.weixin.qq.com/s/j4AyUVbcKVuGstEULl25RQ
 
 
 

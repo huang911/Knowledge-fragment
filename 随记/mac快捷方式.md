@@ -27,8 +27,8 @@
 - command+鼠标点击
 - command+w:关闭当前窗口
 - ctrl+tab:查看文件编辑历史
-- ctrl+-:后退
-- ctrl+shift+-:前进
+- **ctrl+-:后退**
+- **ctrl+shift+-:前进**
 - du -hs * /du -shc * // 第二个命令能在最后显示一个Total大小，即当前目录的总大小
 - du -sh * | sort -rh  // 显示当前目录下所有文件（包含文件夹）大小，并排序
 - **win+shift: 鼠标快速选择某一列**
